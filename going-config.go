@@ -14,7 +14,7 @@ type ConfigSettingStruct struct {
 	ConfigUserName	string
 	ConfigPassword	string
 	ConfigID		string
-	
+
 }
 
 type ConfigTokenStruct struct {
@@ -34,7 +34,7 @@ type ConfigStruct struct {
 }
 
 
-func getConfig(address, port, user, password, config_id string) (string, error) {
+func GetConfig(address, port, user, password, config_id string) (string, error) {
 	var config_str string
 	var err error
 
@@ -75,7 +75,7 @@ func getConfig(address, port, user, password, config_id string) (string, error) 
 	return config_str, err
 }
 
-func getConfigToken(address, port, user, password string) (*ConfigTokenStruct, error) {
+func GetConfigToken(address, port, user, password string) (*ConfigTokenStruct, error) {
 
 	url := "http://" + address + ":" + port + "/api/users/login"
  	method := "POST"
