@@ -14,6 +14,7 @@ type ConfigSettingStruct struct {
 	ConfigUserName	string
 	ConfigPassword	string
 	ConfigID		string
+	
 }
 
 type ConfigTokenStruct struct {
