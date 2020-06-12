@@ -1,5 +1,13 @@
 package GoingConfig
 
+import (
+	"fmt"
+	"net/http"
+	"io/ioutil"
+	"strings"
+	"encoding/json"
+)
+
 type ConfigSettingStruct struct {
 	ConfigAddress	string
 	ConfigPort	string
@@ -29,7 +37,7 @@ func getConfig(address, port, user, password, config_id string) (string, error) 
 	var config_str string
 	var err error
 
-	config_token, err := instance.getConfigToken(address, port, user, password)
+	config_token, err := getConfigToken(address, port, user, password)
 	if err != nil || config_token == nil {
 		err = fmt.Errorf("func getConfigToken(): %v, config_token: %v", err, config_token)
 	} else {
